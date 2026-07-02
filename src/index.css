@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #f6faf8;
+  min-height: 100vh;
+  font-weight: 400;
+  font-family: "Fira Sans", sans-serif;
+  color: #1f2d2a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 20px 32px;
+  text-align: left;
+  background:
+    linear-gradient(rgba(8, 35, 31, 0.64), rgba(8, 35, 31, 0.64)),
+    url("./assets/background.jpg") center/cover no-repeat;
+}
+
+.auth-inner {
+  width: min(450px, 100%);
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0px 18px 60px rgba(6, 35, 30, 0.24);
+  padding: 36px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #0d6b58;
+  box-shadow: 0 0 0 3px rgba(13, 107, 88, 0.12);
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: center;
+  font-size: 13px;
+  color: #eaf7f2;
+  margin: -24px 0 24px;
+}
+
+.forgot-password a {
+  color: #ffffff;
+  font-weight: 700;
+}
+.continue-p{
+  font-size: 12px;
+    color: #63736f;
+    font-weight: 600;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.auth-inner h2 {
+  color: #0f3f36;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.auth-inner label {
+  color: #243b36;
+  margin-bottom: 6px;
+}
+
+.auth-inner .btn-primary {
+  background: #0d6b58;
+  border-color: #0d6b58;
+  font-weight: 700;
+  padding: 11px 16px;
+}
+
+.auth-inner .btn-primary:hover {
+  background: #095545;
+  border-color: #095545;
+}

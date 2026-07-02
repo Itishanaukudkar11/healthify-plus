@@ -1,0 +1,36 @@
+.exercise-container {
+  text-align: left;
+  margin: 20px 0;
+  padding: 22px;
+  max-width: 760px;
+  border: 1px solid #dce8e3;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 26px rgba(13, 59, 61, 0.08);
+}
+
+.exercise-container h2 {
+  color: #0d3b3d;
+  margin-top: 0;
+}
+
+.exercise-image {
+  width: min(100%, 460px);
+  height: auto;
+  margin: 12px 0 18px;
+  border-radius: 8px;
+  display: block;
+}
+
+.exercise-steps {
+  text-align: left;
+  padding-left: 22px;
+  margin: 0;
+}
+
+.exercise-steps li {
+  color: #173d36;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+

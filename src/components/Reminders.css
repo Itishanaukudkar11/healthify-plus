@@ -1,0 +1,67 @@
+.reminders-container {
+    padding: 20px;
+  }
+  
+  .reminder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+  }
+  
+  .reminder-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="time"],
+  select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .days-of-week {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .day-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .add-reminder-btn {
+    background-color: #003c32; /* Dark hospital green */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .add-reminder-btn:hover {
+    background-color: #00332b;
+  }
+  
+  .reminder-list {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .reminder-list li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  

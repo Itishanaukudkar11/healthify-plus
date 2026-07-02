@@ -1,0 +1,57 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(6, 35, 31, 0.82);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 14px 28px;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Navigation list */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Navigation links */
+.navbar-nav li a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 9px 12px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.navbar-nav li a:hover {
+    background: #0D3B3D;
+    border-radius: 5px;
+}
+
+.login-button {
+    background: #ffffff;
+    color: #0D3B3D;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #dff7ee;
+}
+
+
