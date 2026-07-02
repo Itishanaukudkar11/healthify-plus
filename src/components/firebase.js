@@ -7,12 +7,12 @@ import {getFirestore} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDrB9FupDgjjVk4_guLC24ydG3retE3bME",
-  authDomain: "login-auth-4736e.firebaseapp.com",
-  projectId: "login-auth-4736e",
-  storageBucket: "login-auth-4736e.appspot.com",
-  messagingSenderId: "10562914305",
-  appId: "1:10562914305:web:2cff37be4fa9ccf0a29800"
+  apiKey: "AIzaSyCZO_d6FJpj6UtuZmkm8r30kkKieVua5U8",
+  authDomain: "healthify-plus-1f12b.firebaseapp.com",
+  projectId: "healthify-plus-1f12b",
+  storageBucket: "healthify-plus-1f12b.firebasestorage.app",
+  messagingSenderId: "828291073604",
+  appId: "1:828291073604:web:09e54bf4e1a0655dc89e11"
 };
 
 // Initialize Firebase
