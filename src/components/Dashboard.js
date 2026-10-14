@@ -79,7 +79,7 @@ const exercisePlans = {
     cue: "A slower rhythm for winding down.",
   },
   "Alternate Nostril Breathing": {
-    totalSeconds: 120,
+    totalSeconds: 112,
     pattern: [
       { label: "Close right, inhale left", seconds: 4 },
       { label: "Switch, exhale right", seconds: 4 },
@@ -107,7 +107,7 @@ const exercisePlans = {
     cue: "Simple reset for mental clutter.",
   },
   "Roll Breathing": {
-    totalSeconds: 120,
+    totalSeconds: 112,
     pattern: [
       { label: "Belly expands", seconds: 4 },
       { label: "Chest expands", seconds: 3 },
@@ -886,6 +886,8 @@ const Dashboard = ({ user }) => {
 };
 
 const BreathingGuide = ({ exerciseName, plan, seconds, timerRunning, onStart, onPause, onReset }) => {
+  const [lungScale, setLungScale] = useState(1.05);
+  const lastPhaseRef = useRef("");
   const activePlan = plan || { totalSeconds: 60, pattern: [{ label: "Breathe slowly", seconds: 6 }], cue: "Follow a steady rhythm." };
   const cycleLength = activePlan.pattern.reduce((sum, phase) => sum + phase.seconds, 0);
   const elapsed = Math.max(0, activePlan.totalSeconds - seconds);
@@ -899,13 +901,36 @@ const BreathingGuide = ({ exerciseName, plan, seconds, timerRunning, onStart, on
   const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
   const remainingSeconds = String(seconds % 60).padStart(2, "0");
 
+  useEffect(() => {
+    if (!timerRunning) {
+      setLungScale(1);
+      lastPhaseRef.current = "";
+      return;
+    }
+
+    const label = (currentPhase?.label || "").toLowerCase();
+    if (lastPhaseRef.current === label) return;
+    lastPhaseRef.current = label;
+
+    if (/(inhale|fill|rise|expand|breathe in)/.test(label)) {
+      setLungScale(1.22);
+    } else if (/(exhale|out|sigh|fall|release|roll)/.test(label)) {
+      setLungScale(0.82);
+    } else if (/(hold|pause|softly|relax)/.test(label)) {
+      // Keep the most recent inhale/exhale position during holds.
+      setLungScale((scale) => (scale > 1 ? scale : scale < 1 ? scale : 1.05));
+    }
+  }, [currentPhase?.label, timerRunning]);
+
+  const phaseSeconds = currentPhase?.seconds || 4;
+
   return (
     <div className="breathing-guide">
-      <div className={`breathing-figure ${timerRunning ? "is-running" : ""}`}>
+      <div className={`breathing-figure ${timerRunning ? "is-running" : "is-paused"}`}>
         <div className="figure-head" />
-        <div className="figure-body">
-          <div className="figure-lung left" />
-          <div className="figure-lung right" />
+        <div className="figure-body" style={{ transform: `scaleY(${timerRunning ? (lungScale > 1 ? 1.04 : 0.96) : 1})`, transition: `transform ${phaseSeconds}s ease-in-out` }}>
+          <div className="figure-lung left" style={{ transform: `scale(${lungScale})`, transition: `transform ${phaseSeconds}s ease-in-out` }} />
+          <div className="figure-lung right" style={{ transform: `scale(${lungScale})`, transition: `transform ${phaseSeconds}s ease-in-out` }} />
         </div>
       </div>
       <div className="breathing-timer">

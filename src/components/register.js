@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -10,6 +11,7 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -43,6 +45,9 @@ function Register() {
       toast.success("User Registered Successfully!!", {
         position: "top-center",
       });
+      setTimeout(() => {
+        window.location.href = "/dashboard";
+      }, 800);
     } catch (error) {
       console.log(error.message);
       toast.error(error.message, {
@@ -53,6 +58,9 @@ function Register() {
 
   return (
     <form onSubmit={handleRegister}>
+      <button type="button" className="auth-back-button" onClick={() => navigate("/")} aria-label="Back to home">
+        ← Back to Home
+      </button>
 
        <div className="auth-wrapper">
       <div className="auth-inner">

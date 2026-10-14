@@ -36,6 +36,27 @@ html,
   overflow-x: hidden;
 }
 
+.auth-back-button {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0d3b3d;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(6, 35, 31, 0.22);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.auth-back-button:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+}
+
 
 .navbar-light {
   background-color: #ffffff;

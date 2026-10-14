@@ -1,5 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
 import SignInwithGoogle from "./signInWIthGoogle";
@@ -7,6 +8,7 @@ import SignInwithGoogle from "./signInWIthGoogle";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +30,9 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <button type="button" className="auth-back-button" onClick={() => navigate("/")} aria-label="Back to home">
+        ← Back to Home
+      </button>
 
       <div className="auth-wrapper">
       <div className="auth-inner">

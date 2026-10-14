@@ -493,11 +493,11 @@
 }
 
 .breathing-figure.is-running .figure-lung {
-  animation: breatheLungs 6s ease-in-out infinite;
+  animation: none;
 }
 
 .breathing-figure.is-running .figure-body {
-  animation: breatheBody 6s ease-in-out infinite;
+  animation: none;
 }
 
 .breathing-timer strong {
